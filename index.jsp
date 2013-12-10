@@ -79,7 +79,7 @@
 			<div class="col-xs-4" id="column-picture">			
 				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
-					String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
+					String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\s","") + ".jpg.to/").openStream())).readLine();
 					out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
 				%>
 
@@ -89,7 +89,7 @@
 			<div class="col-xs-4" id="column-definition">
 				<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
-					URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
+					URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search").replaceAll("\s",""));
 					URLConnection spoof = url.openConnection();
 					
 					spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
