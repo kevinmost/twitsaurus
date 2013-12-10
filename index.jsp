@@ -79,8 +79,10 @@
 			<div class="col-xs-4" id="column-picture">			
 				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
-					String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\\s","") + ".jpg.to/").openStream())).readLine();
-					out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
+					if (request.getParameter("search") != null) {
+						String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\\s","") + ".jpg.to/").openStream())).readLine();
+						out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
+					}
 				%>
 
 
