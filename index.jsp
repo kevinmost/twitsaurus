@@ -11,7 +11,7 @@
 		<meta name="author" content="">
 		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-		<title>Twitsaurus</title>
+		<title>Twitsaurus Beta</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.css" rel="stylesheet">
@@ -40,10 +40,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Twitsaurus</a>
+					<a class="navbar-brand" href="#">Twitsaurus Beta</a>
 					<form class="navbar-form navbar-right" role="form" action="index.jsp" method="GET">
 						<div class="form-group">
 							<input type="text" placeholder="Enter text to search" class="form-control" name="search">
+						</div>
+						<div class="form-group">
+							<input type="checkbox" name="random" value="Random">Random image?</input>
 						</div>
 						<button type="submit" value="Submit" class="btn btn-success">Search!</button>
 					</form>
