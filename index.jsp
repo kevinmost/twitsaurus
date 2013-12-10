@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ page import="java.net.*" %>
+<%@ page import="java.io.*" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -50,15 +52,21 @@
 		</div>
 
 		<!-- Main component for a primary marketing message or call to action -->
-		<div class="col-lg-4">
+		<div class="col-xs-4">
 			TWITTER FEED GOES HERE
 		</div>
 
-		<div class="col-lg-4">
-			GOOGLE IMAGES GO HERE
+		<div class="col-xs-4">
+			<% 		
+				URL url = new URL("http://banana.jpg.to/");
+				BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+				String source = in.readLine();
+				System.out.println(source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")));
+			%>
+
 		</div>
 
-		<div class="col-lg-4">
+		<div class="col-xs-4">
 			DICTIONARY ENTRY GOES HERE
 		</div>
 

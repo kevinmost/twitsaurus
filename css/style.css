@@ -6,7 +6,7 @@ html * { /*I like this font*/
 body {
 	padding-top: 70px;
 }
-.col-lg-4 {
+.col-xs-4 {
 	background-color: #eee;	
 	border-right: 1px solid #999;
 }
