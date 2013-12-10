@@ -86,7 +86,9 @@
 			%>
 		</div>
 
-		<div class="jumbotron">
+
+		<div id="push"></div>
+		<div id="footer">
 			AD SPACE GOES HERE
 
 			<p>Also here is the time just because I can motherfucker: <%= new java.util.Date() %> </p>
