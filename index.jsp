@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page import="java.net.*" %>
 <%@ page import="java.io.*" %>
-<%@ page import="twitter4j.Query,twitter4j.QueryResult,twitter4j.Status,twitter4j.Twitter,twitter4j.TwitterException,twitter4j.TwitterFactory,twitter4j.conf.ConfigurationBuilder" %>
+<%@ page import="twitter4j.Query,twitter4j.QueryResult,twitter4j.Status,twitter4j.Twitter,twitter4j.TwitterException,twitter4j.TwitterFactory,twitter4j.conf.ConfigurationBuilder,de.tudarmstadt.*" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -127,7 +127,7 @@
 		</div>
 
 		<div id="footer">
-			<a href="http://www.ivefinancial.com/inc/store/store_eCommerce.php?id_corp=11777">BUY AD SPACE</a>
+			<h2><a href="http://www.ivefinancial.com/inc/store/store_eCommerce.php?id_corp=11777">BUY AD SPACE</a></h2>
 		</div>
 		
 
