@@ -55,7 +55,20 @@
 			<!-- Main component for a primary marketing message or call to action -->
 			<div class="col-xs-4" id="column-twitter">
 				<%
-					Twitter twitter = new TwitterFactory().getInstance();
+					ConfigurationBuilder cb = new ConfigurationBuilder();
+					cb.setDebugEnabled(true)
+					  .setOAuthConsumerKey("IumnEae0GIvKylSsJPbjA")
+					  .setOAuthConsumerSecret("uXs22bo5zDCeX18ax5Fq4IgNxJbVmdJpShXvYUCD8")
+					  .setOAuthAccessToken("2228768737-pqYhT8oJd7b6lRmznmGrgGphm9Jw5ePJ8TQnxf2")
+					  .setOAuthAccessTokenSecret("SD0JwlGvOb9kipB4Bgom5E7p4j379mzArTRnNU4jEmKrD");
+					TwitterFactory tf = new TwitterFactory(cb.build());
+					Twitter twitter = tf.getInstance();
+					
+					Query query = new Query("test");
+					QueryResult result = twitter.search(query);
+					for (Status status : result.getTweets()) {
+						out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+					}
 				%>
 			</div>
 
