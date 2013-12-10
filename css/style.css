@@ -9,9 +9,6 @@ body {
 	background-color: #eee;	
 	border-right: 1px solid #999;
 }
-.jumbotron {
-	margin-top: 3em;
-}
 .col-xs-4 img {
 	max-width: 100%;
 }
@@ -20,4 +17,7 @@ body {
 }
 .navbar-brand {
 	color: white;
+}
+#footer {
+	margin-top: 3em;
 }
