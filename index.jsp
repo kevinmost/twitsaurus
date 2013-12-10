@@ -80,7 +80,7 @@
 				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
 					if (request.getParameter("search") != null) {
-						String picureSource = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\\s","") + ".jpg.to/").openStream())).readLine();
+						String picureSource = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\\s","") + ".jpg.to/r").openStream())).readLine();
 						out.println(picureSource.replaceAll("(?<=img )(.*)(?=src)", ""));
 					}
 				%>
