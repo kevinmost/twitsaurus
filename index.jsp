@@ -46,11 +46,11 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="#">Twitsaurus</a>
-					<form class="navbar-form navbar-right" role="form">
+					<form class="navbar-form navbar-right" role="form" action="index.jsp" method="GET">
 						<div class="form-group">
-							<input type="text" placeholder="Enter text to search" class="form-control">
+							<input type="text" placeholder="Enter text to search" class="form-control" name="search">
 						</div>
-						<button type="submit" class="btn btn-danger disabled">Search!</button>
+						<button type="submit" value="Submit" class="btn btn-danger disabled">Search!</button>
 					</form>
 				</div>
 			</div>
