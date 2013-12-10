@@ -56,9 +56,11 @@
 			TWITTER FEED GOES HERE
 		</div>
 
-		<div class="col-xs-4">
-			<%		String source = new BufferedReader(new InputStreamReader(new URL("http://banana.jpg.to/").openStream())).readLine();
-		return source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")); %>
+		<div class="col-xs-4">			
+			<% 
+				String source = new BufferedReader(new InputStreamReader(new URL("http://banana.jpg.to/").openStream())).readLine();
+				System.out.println(source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")));
+			%>
 
 
 		</div>
