@@ -52,7 +52,7 @@
 		</div>
 		<div>
 			<!-- Main component for a primary marketing message or call to action -->
-			<div class="col-xs-4" id="column-twitter">
+			<div class="col-xs-5" id="column-twitter">
 				<h2>Here's what people on Twitter are saying about <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
 					if (request.getParameter("search") !=  null) {
@@ -76,7 +76,7 @@
 				%>
 			</div>
 
-			<div class="col-xs-4" id="column-picture">			
+			<div class="col-xs-5" id="column-picture">			
 				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
 					if (request.getParameter("search") != null) {
@@ -88,7 +88,7 @@
 
 			</div>
 
-			<div class="col-xs-4" id="column-definition">
+			<div class="col-xs-2" id="column-definition">
 				<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
 					if (request.getParameter("search") != null) {
