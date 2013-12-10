@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ page import="java.net.*" %>
 <%@ page import="java.io.*" %>
+<%@ page import="twitter4j.*" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -45,7 +46,7 @@
 						<div class="form-group">
 							<input type="text" placeholder="Enter text to search" class="form-control">
 						</div>
-						<button type="submit" class="btn btn-danger disabled" data-toggle="tooltip" data-placement="bottom" title="This feature is coming soon!">Search!</button>
+						<button type="submit" class="btn btn-danger disabled">Search!</button>
 					</form>
 				</div>
 			</div>
@@ -53,7 +54,9 @@
 		<div>
 			<!-- Main component for a primary marketing message or call to action -->
 			<div class="col-xs-4" id="column-twitter">
-				TWITTER FEED GOES HERE
+				<%
+					Twitter twitter = new TwitterFactory().getInstance();
+				%>
 			</div>
 
 			<div class="col-xs-4" id="column-picture">			
