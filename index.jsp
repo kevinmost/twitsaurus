@@ -80,8 +80,8 @@
 				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
 					if (request.getParameter("search") != null) {
-						String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\\s","") + ".jpg.to/").openStream())).readLine();
-						out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
+						String picureSource = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search").replaceAll("\\s","") + ".jpg.to/").openStream())).readLine();
+						out.println(picureSource.replaceAll("(?<=img )(.*)(?=src)", ""));
 					}
 				%>
 
@@ -97,16 +97,16 @@
 					spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
 					BufferedReader in = new BufferedReader(new InputStreamReader(spoof.getInputStream()));
 					String strLine = "";
-					source = "";
+					String definitionSource = "";
 					while ((strLine = in.readLine()) != null){
-						source += strLine + "\n";
+						definitionSource += strLine + "\n";
 					}
 					
 					String startDelimiter = "<div class=\"ds-single\">";
-					if (source.contains(startDelimiter)) {
-						source = source.substring(source.indexOf(startDelimiter));
-						source = source.substring(startDelimiter.length(), source.indexOf("</div>"));
-						out.println(source);
+					if (definitionSource.contains(startDelimiter)) {
+						definitionSource = definitionSource.substring(definitionSource.indexOf(startDelimiter));
+						definitionSource = definitionSource.substring(startDelimiter.length(), definitionSource.indexOf("</div>"));
+						out.println(definitionSource);
 					}
 					else {
 						out.println("No definition found");
