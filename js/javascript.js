@@ -1,4 +1,4 @@
-$(document).ready(resizeAllColumns);
+$(window).load(resizeAllColumns);
 $(window).resize(resizeAllColumns);
 
 function resizeAllColumns() {
