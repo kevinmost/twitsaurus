@@ -50,43 +50,43 @@
 				</div>
 			</div>
 		</div>
+		<div>
+			<!-- Main component for a primary marketing message or call to action -->
+			<div class="col-xs-4">
+				TWITTER FEED GOES HERE
+			</div>
 
-		<!-- Main component for a primary marketing message or call to action -->
-		<div class="col-xs-4">
-			TWITTER FEED GOES HERE
+			<div class="col-xs-4">			
+				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
+				<% 
+					String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
+					out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
+				%>
+
+
+			</div>
+
+			<div class="col-xs-4">
+				<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
+				<%
+					URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
+					URLConnection spoof = url.openConnection();
+					
+					spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
+					BufferedReader in = new BufferedReader(new InputStreamReader(spoof.getInputStream()));
+					String strLine = "";
+					source = "";
+					while ((strLine = in.readLine()) != null){
+						source += strLine + "\n";
+					}
+					
+					String startDelimiter = "<div class=\"ds-single\">";
+					source = source.substring(source.indexOf(startDelimiter));
+					source = source.substring(startDelimiter.length(), source.indexOf("</div>"));
+					out.println(source);
+				%>
+			</div>
 		</div>
-
-		<div class="col-xs-4">			
-			<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
-			<% 
-				String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
-				out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
-			%>
-
-
-		</div>
-
-		<div class="col-xs-4">
-			<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
-			<%
-				URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
-				URLConnection spoof = url.openConnection();
-				
-				spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
-				BufferedReader in = new BufferedReader(new InputStreamReader(spoof.getInputStream()));
-				String strLine = "";
-				source = "";
-				while ((strLine = in.readLine()) != null){
-					source += strLine + "\n";
-				}
-				
-				String startDelimiter = "<div class=\"ds-single\">";
-				source = source.substring(source.indexOf(startDelimiter));
-				source = source.substring(startDelimiter.length(), source.indexOf("</div>"));
-				out.println(source);
-			%>
-		</div>
-
 
 		<div id="footer">
 			AD SPACE GOES HERE
