@@ -52,11 +52,11 @@
 		</div>
 		<div>
 			<!-- Main component for a primary marketing message or call to action -->
-			<div class="col-xs-4">
+			<div class="col-xs-4" id="column-twitter">
 				TWITTER FEED GOES HERE
 			</div>
 
-			<div class="col-xs-4">			
+			<div class="col-xs-4" id="column-picture">			
 				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
 					String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
@@ -66,7 +66,7 @@
 
 			</div>
 
-			<div class="col-xs-4">
+			<div class="col-xs-4" id="column-definition">
 				<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
 					URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
