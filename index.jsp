@@ -45,7 +45,7 @@
 						<div class="form-group">
 							<input type="text" placeholder="Enter text to search" class="form-control" name="search">
 						</div>
-						<button type="submit" value="Submit" class="btn btn-danger disabled">Search!</button>
+						<button type="submit" value="Submit" class="btn btn-success">Search!</button>
 					</form>
 				</div>
 			</div>
