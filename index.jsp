@@ -55,7 +55,7 @@
 			<!-- Main component for a primary marketing message or call to action -->
 			<div class="col-xs-4" id="column-twitter">
 				<%
-					ConfigurationBuilder cb = new ConfigurationBuilder();
+					twitter4j.conf.ConfigurationBuilder cb = new ConfigurationBuilder();
 					cb.setDebugEnabled(true)
 					  .setOAuthConsumerKey("IumnEae0GIvKylSsJPbjA")
 					  .setOAuthConsumerSecret("uXs22bo5zDCeX18ax5Fq4IgNxJbVmdJpShXvYUCD8")
