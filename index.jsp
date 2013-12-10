@@ -60,20 +60,23 @@
 			<div class="col-xs-4" id="column-twitter">
 				<h2>Here's what people on Twitter are saying about <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
-					ConfigurationBuilder cb = new ConfigurationBuilder();
-					cb.setDebugEnabled(true)
-					  .setOAuthConsumerKey("IumnEae0GIvKylSsJPbjA")
-					  .setOAuthConsumerSecret("uXs22bo5zDCeX18ax5Fq4IgNxJbVmdJpShXvYUCD8")
-					  .setOAuthAccessToken("2228768737-pqYhT8oJd7b6lRmznmGrgGphm9Jw5ePJ8TQnxf2")
-					  .setOAuthAccessTokenSecret("SD0JwlGvOb9kipB4Bgom5E7p4j379mzArTRnNU4jEmKrD");
-					TwitterFactory tf = new TwitterFactory(cb.build());
-					Twitter twitter = tf.getInstance();
+					if (request.getParameter("search") !=  null) {
+						ConfigurationBuilder cb = new ConfigurationBuilder();
+						cb.setDebugEnabled(true)
+						  .setOAuthConsumerKey("IumnEae0GIvKylSsJPbjA")
+						  .setOAuthConsumerSecret("uXs22bo5zDCeX18ax5Fq4IgNxJbVmdJpShXvYUCD8")
+						  .setOAuthAccessToken("2228768737-pqYhT8oJd7b6lRmznmGrgGphm9Jw5ePJ8TQnxf2")
+						  .setOAuthAccessTokenSecret("SD0JwlGvOb9kipB4Bgom5E7p4j379mzArTRnNU4jEmKrD");
+						TwitterFactory tf = new TwitterFactory(cb.build());
 					
-					Query query = new Query(request.getParameter("search"));
-					QueryResult result = twitter.search(query);
-					for (Status status : result.getTweets()) {
-						out.println("<strong>@" + status.getUser().getScreenName() + ":</strong>" + status.getText());
-						out.println("<br />");
+						Twitter twitter = tf.getInstance();
+						
+						Query query = new Query(request.getParameter("search"));
+						QueryResult result = twitter.search(query);
+						for (Status status : result.getTweets()) {
+							out.println("<strong>@" + status.getUser().getScreenName() + ":</strong>" + status.getText());
+							out.println("<br />");
+						}
 					}
 				%>
 			</div>
