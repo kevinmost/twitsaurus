@@ -30,11 +30,11 @@
 	</head>
 
 	<body>
-		<%
-			if (request.getParameter("search") == null) {
-				request.setParameter("search", "test");
+		<script> 
+			if (!search) {
+			window.location.assign("http://kevinmost.no-ip.org:8765/twitsaurus/index.jsp?search=orange");
 			}
-		%>
+		</script>
 		<!-- Fixed navbar -->
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
