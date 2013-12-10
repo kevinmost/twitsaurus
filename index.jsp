@@ -60,7 +60,7 @@
 			<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 			<% 
 				String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
-				out.println("<img src=\"" + source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")) + "\" /\">");
+				out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
 			%>
 
 
