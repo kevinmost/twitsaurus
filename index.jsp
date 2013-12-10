@@ -103,9 +103,14 @@
 					}
 					
 					String startDelimiter = "<div class=\"ds-single\">";
-					source = source.substring(source.indexOf(startDelimiter));
-					source = source.substring(startDelimiter.length(), source.indexOf("</div>"));
-					out.println(source);
+					if (source.contains(startDelimiter)) {
+						source = source.substring(source.indexOf(startDelimiter));
+						source = source.substring(startDelimiter.length(), source.indexOf("</div>"));
+						out.println(source);
+					}
+					else {
+						out.println("No definition found");
+					}
 				%>
 			</div>
 		</div>
