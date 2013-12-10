@@ -66,7 +66,24 @@
 		</div>
 
 		<div class="col-xs-4">
-			DICTIONARY ENTRY GOES HERE
+			<%
+				URL url = new URL("http://www.thefreedictionary.com/p/oranges");
+				URLConnection spoof = url.openConnection();
+				
+				spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
+				BufferedReader in = new BufferedReader(new InputStreamReader(spoof.getInputStream()));
+				String strLine = "";
+				String source = "";
+				while ((strLine = in.readLine()) != null){
+					//Prints each line to the console
+					source += strLine + "\n";
+				}
+				
+				String startDelimiter = "<div class=\"ds-single\">";
+				source = source.substring(source.indexOf(startDelimiter));
+				source = source.substring(startDelimiter.length(), source.indexOf("</div>"));
+				out.println(source);
+			%>
 		</div>
 
 		<div class="jumbotron">
