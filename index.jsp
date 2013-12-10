@@ -57,12 +57,9 @@
 		</div>
 
 		<div class="col-xs-4">
-			<% 		
-				URL url = new URL("http://banana.jpg.to/");
-				BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-				String source = in.readLine();
-				System.out.println(source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")));
-			%>
+			<img src=<%		String source = new BufferedReader(new InputStreamReader(new URL("http://banana.jpg.to/").openStream())).readLine();
+		return source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")); %> />
+
 
 		</div>
 
