@@ -68,6 +68,7 @@
 					QueryResult result = twitter.search(query);
 					for (Status status : result.getTweets()) {
 						out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+						out.println("<br />")
 					}
 				%>
 			</div>
