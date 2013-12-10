@@ -119,7 +119,7 @@
 		</div>
 
 		<div id="footer">
-			AD SPACE GOES HERE
+			<a href="http://www.ivefinancial.com/inc/store/store_eCommerce.php?id_corp=11777">BUY AD SPACE</a>
 		</div>
 		
 
