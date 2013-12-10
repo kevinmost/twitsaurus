@@ -1,4 +1,5 @@
 $(document).ready(resizeAllColumns);
+$(window).resize(resizeAllColumns);
 
 function resizeAllColumns() {
 	var tallestColumn = Math.max($('#column-twitter').height(), $('#column-picture').height(), $('#column-definition').height());
