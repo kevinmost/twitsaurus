@@ -67,7 +67,7 @@
 
 		<div class="col-xs-4">
 			<%
-				URL url = new URL("http://www.thefreedictionary.com/p/oranges");
+				URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
 				URLConnection spoof = url.openConnection();
 				
 				spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
