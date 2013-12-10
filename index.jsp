@@ -45,7 +45,7 @@
 						<div class="form-group">
 							<input type="text" placeholder="Enter text to search" class="form-control">
 						</div>
-						<button type="submit" class="btn btn-success">Search!</button>
+						<button type="submit" class="btn btn-danger disabled" data-toggle="tooltip" data-placement="bottom" title="This feature is coming soon!">Search!</button>
 					</form>
 				</div>
 			</div>
