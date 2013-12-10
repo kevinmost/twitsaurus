@@ -13,3 +13,6 @@ body {
 .jumbotron {
 	margin-top: 3em;
 }
+.col-xs-4 img {
+	max-width: 100%;
+}
