@@ -65,7 +65,7 @@
 					TwitterFactory tf = new TwitterFactory(cb.build());
 					Twitter twitter = tf.getInstance();
 					
-					Query query = new Query("test");
+					Query query = new Query(request.getParameter("search"));
 					QueryResult result = twitter.search(query);
 					for (Status status : result.getTweets()) {
 						out.println("<strong>@" + status.getUser().getScreenName() + ":</strong>" + status.getText());
