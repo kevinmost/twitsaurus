@@ -30,7 +30,11 @@
 	</head>
 
 	<body>
-
+		<%
+			if (request.getParameter("search") == null) {
+				request.setParameter("search", "test");
+			}
+		%>
 		<!-- Fixed navbar -->
 		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
