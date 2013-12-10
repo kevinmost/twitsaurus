@@ -106,7 +106,7 @@
 			</div>
 		</div>
 
-		<div id="footer" class="jumbotron">
+		<div id="footer">
 			AD SPACE GOES HERE
 		</div>
 		
