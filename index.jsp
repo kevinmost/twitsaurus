@@ -91,25 +91,27 @@
 			<div class="col-xs-4" id="column-definition">
 				<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
-					URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search").replaceAll("\\s",""));
-					URLConnection spoof = url.openConnection();
-					
-					spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
-					BufferedReader in = new BufferedReader(new InputStreamReader(spoof.getInputStream()));
-					String strLine = "";
-					String definitionSource = "";
-					while ((strLine = in.readLine()) != null){
-						definitionSource += strLine + "\n";
-					}
-					
-					String startDelimiter = "<div class=\"ds-single\">";
-					if (definitionSource.contains(startDelimiter)) {
-						definitionSource = definitionSource.substring(definitionSource.indexOf(startDelimiter));
-						definitionSource = definitionSource.substring(startDelimiter.length(), definitionSource.indexOf("</div>"));
-						out.println(definitionSource);
-					}
-					else {
-						out.println("No definition found");
+					if (request.getParameter("search") != null) {
+						URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search").replaceAll("\\s",""));
+						URLConnection spoof = url.openConnection();
+						
+						spoof.setRequestProperty( "User-Agent", "Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; H010818)" );
+						BufferedReader in = new BufferedReader(new InputStreamReader(spoof.getInputStream()));
+						String strLine = "";
+						String definitionSource = "";
+						while ((strLine = in.readLine()) != null){
+							definitionSource += strLine + "\n";
+						}
+						
+						String startDelimiter = "<div class=\"ds-single\">";
+						if (definitionSource.contains(startDelimiter)) {
+							definitionSource = definitionSource.substring(definitionSource.indexOf(startDelimiter));
+							definitionSource = definitionSource.substring(startDelimiter.length(), definitionSource.indexOf("</div>"));
+							out.println(definitionSource);
+						}
+						else {
+							out.println("No definition found");
+						}
 					}
 				%>
 			</div>
