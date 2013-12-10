@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@ page import="java.net.*" %>
 <%@ page import="java.io.*" %>
-<%@ page import="twitter4j.*" %>
+<%@ page import="twitter4j.Query,twitter4j.QueryResult,twitter4j.Status,twitter4j.Twitter,twitter4j.TwitterException,twitter4j.TwitterFactory,twitter4j.conf.ConfigurationBuilder" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -55,7 +55,7 @@
 			<!-- Main component for a primary marketing message or call to action -->
 			<div class="col-xs-4" id="column-twitter">
 				<%
-					twitter4j.conf.ConfigurationBuilder cb = new ConfigurationBuilder();
+					ConfigurationBuilder cb = new ConfigurationBuilder();
 					cb.setDebugEnabled(true)
 					  .setOAuthConsumerKey("IumnEae0GIvKylSsJPbjA")
 					  .setOAuthConsumerSecret("uXs22bo5zDCeX18ax5Fq4IgNxJbVmdJpShXvYUCD8")
