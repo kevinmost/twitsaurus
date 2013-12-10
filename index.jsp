@@ -57,7 +57,7 @@
 		</div>
 
 		<div class="col-xs-4">			
-			<h2>Here is a picture of <strong><%= request.getParameter("search") %></strong></h2>
+			<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 			<% 
 				String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
 				out.println("<img src=\"" + source.substring(source.indexOf("src=")+5, source.lastIndexOf("\"")) + "\" /\">");
@@ -67,7 +67,7 @@
 		</div>
 
 		<div class="col-xs-4">
-			<h2>Here is the definition of <strong><%= request.getParameter("search") %></strong></h2>
+			<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 			<%
 				URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
 				URLConnection spoof = url.openConnection();
@@ -77,7 +77,6 @@
 				String strLine = "";
 				source = "";
 				while ((strLine = in.readLine()) != null){
-					//Prints each line to the console
 					source += strLine + "\n";
 				}
 				
@@ -89,7 +88,6 @@
 		</div>
 
 
-		<div id="push"></div>
 		<div id="footer">
 			AD SPACE GOES HERE
 
