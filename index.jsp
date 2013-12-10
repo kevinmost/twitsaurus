@@ -54,7 +54,7 @@
 		<div>
 			<!-- Main component for a primary marketing message or call to action -->
 			<div class="col-xs-4" id="column-twitter">
-				<h2>Here's what people on Twitter are saying about <b>"<%= request.getParameter("search") %>"</b></h2>
+				<h2>Here's what people on Twitter are saying about <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
 					ConfigurationBuilder cb = new ConfigurationBuilder();
 					cb.setDebugEnabled(true)
@@ -68,14 +68,14 @@
 					Query query = new Query("test");
 					QueryResult result = twitter.search(query);
 					for (Status status : result.getTweets()) {
-						out.println("<b>@" + status.getUser().getScreenName() + ":</b>" + status.getText());
+						out.println("<strong>@" + status.getUser().getScreenName() + ":</strong>" + status.getText());
 						out.println("<br />");
 					}
 				%>
 			</div>
 
 			<div class="col-xs-4" id="column-picture">			
-				<h2>Here is a picture of <b>"<%= request.getParameter("search") %>"</b></h2>
+				<h2>Here is a picture of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<% 
 					String source = new BufferedReader(new InputStreamReader(new URL("http://" + request.getParameter("search") + ".jpg.to/").openStream())).readLine();
 					out.println(source.replaceAll("(?<=img )(.*)(?=src)", ""));
@@ -85,7 +85,7 @@
 			</div>
 
 			<div class="col-xs-4" id="column-definition">
-				<h2>Here is the definition of <b>"<%= request.getParameter("search") %>"</b></h2>
+				<h2>Here is the definition of <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
 					URL url = new URL("http://www.thefreedictionary.com/p/" + request.getParameter("search"));
 					URLConnection spoof = url.openConnection();
