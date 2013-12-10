@@ -54,6 +54,7 @@
 		<div>
 			<!-- Main component for a primary marketing message or call to action -->
 			<div class="col-xs-4" id="column-twitter">
+				<h2>Here's what people on Twitter are saying about <strong>"<%= request.getParameter("search") %>"</strong></h2>
 				<%
 					ConfigurationBuilder cb = new ConfigurationBuilder();
 					cb.setDebugEnabled(true)
