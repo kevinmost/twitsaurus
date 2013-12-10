@@ -3,3 +3,13 @@ html * { /*I like this font*/
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 }
+body {
+	padding-top: 70px;
+}
+.col-lg-4 {
+	background-color: #eee;	
+	border-right: 1px solid #999;
+}
+.jumbotron {
+	margin-top: 3em;
+}
